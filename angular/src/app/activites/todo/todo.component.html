@@ -1,0 +1,22 @@
+<h2 class="title"><u>My TODO List:</u></h2>
+
+<div class="categories">
+  <div class="category" *ngFor="let category of getCategories()">
+    <b>{{ category | titlecase }}</b>
+
+    <div class="items">
+      <div class="item" *ngFor="let item of getItemsByCategory(category)" (click)="onItemCheck(item)"
+        [class.complete]="item.checked">
+        <input type="checkbox" [checked]=item.checked>
+        {{ item.text }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<button class="add-new-item-button" (click)="onAddTodoItemClick($event)">
+  Add New Task
+</button>
+
+<app-modal *ngIf="showAddTodoItemModal" (clickOutside)="showAddTodoItemModal = false">
+</app-modal>

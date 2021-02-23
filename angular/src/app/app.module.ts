@@ -1,20 +1,28 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ClickOutsideModule } from 'ng-click-outside';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { ActivitesComponent } from './activites/activites.component';
+import { TodoComponent } from './activites/todo/todo.component';
+import { ModalComponent } from './shared/modal/modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    SidebarComponent
+    SidebarComponent,
+    ActivitesComponent,
+    TodoComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ClickOutsideModule
   ],
   providers: [],
   bootstrap: [AppComponent]

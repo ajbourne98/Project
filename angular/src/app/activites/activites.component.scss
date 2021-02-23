@@ -1,0 +1,11 @@
+@import "../../styles.scss";
+
+.sidebar {
+  height: $sidebar-height;
+  width: 275px;
+  border-right: 1px solid black;
+  position: fixed;
+  right: 0;
+  top: 9rem;
+  border-left: 1px solid black;
+}
