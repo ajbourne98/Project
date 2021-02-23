@@ -1,5 +1,7 @@
+@import "../../styles.scss";
+
 .header {
-  height: 65px;
+  height: $header-height;
   border-bottom: 1px solid black;
   padding: 1rem;
 }
@@ -33,7 +35,7 @@
 }
 
 .nav {
-  height: 3rem;
+  height: $nav-height;
   border-bottom: 1px solid black;
 
   .left {

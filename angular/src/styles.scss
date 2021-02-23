@@ -1,6 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
+$header-height: 65px;
+$nav-height: 3rem;
+$sidebar-height: 1022px;
+
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
 }
