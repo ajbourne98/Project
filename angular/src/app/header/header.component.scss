@@ -31,3 +31,22 @@
     background-color: lightgray;
   }
 }
+
+.nav {
+  height: 3rem;
+  border-bottom: 1px solid black;
+
+  .left {
+    float: left;
+  }
+
+  .right {
+    float: right;
+  }
+
+  button {
+    width: 6rem;
+    height: 3rem;
+    background-color: white;
+  }
+}
