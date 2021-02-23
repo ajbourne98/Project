@@ -1,2 +1,0 @@
-# Project
- Individual Project Prototype
