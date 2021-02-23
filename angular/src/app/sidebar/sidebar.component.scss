@@ -4,4 +4,26 @@
   height: $sidebar-height;
   width: 180px;
   border-right: 1px solid black;
+  background-color: lightgray;
+}
+
+.sidebar-items {
+  padding-top: 1rem;
+
+  .item {
+    width: 100%;
+    padding: 1.5rem 1rem 1.5rem 1rem;
+    text-align: center;
+  }
+
+  .sub-items {
+    margin-top: 1rem;
+
+    .sub-item {
+      width: 100%;
+      padding: 1rem 1rem 1rem 1rem;
+      text-align: right;
+    }
+  }
+
 }
