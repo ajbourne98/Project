@@ -1,0 +1,33 @@
+.header {
+  height: 65px;
+  border-bottom: 1px solid black;
+  padding: 1rem;
+}
+
+.moodle {
+  float: left;
+  font-size: 3.5rem;
+  margin-left: 0.5rem;
+  line-height: 4rem;
+}
+
+.personal {
+  float: right;
+
+  .name {
+    float: left;
+    font-size: 1.3rem;
+    line-height: 4rem;
+  }
+
+  .picture {
+    width: 4rem;
+    height: 4rem;
+    float: right;
+    margin-left: 1rem;
+    position: relative;
+    border: 1px solid black;
+    border-radius: 100%;
+    background-color: lightgray;
+  }
+}
