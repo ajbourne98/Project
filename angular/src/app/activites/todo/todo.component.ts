@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-todo',
@@ -9,32 +10,21 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class TodoComponent implements OnInit {
   public showAddTodoItemModal = false;
   public addItemForm: FormGroup;
+  public faTimes = faTimes;
 
-  private tasks: TodoItem[];
+  private tasks: TodoItem[] = [];
   private categories: Category[] = [];
+  private taskCount = 0;
 
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
-    this.tasks = [
-      {
-        text: 'Test todo item 1',
-        checked: false,
-        category: 'GENERAL'
-      },
-      {
-        text: 'Test todo item 2',
-        checked: false,
-        category: 'MODULE 1'
-      },
-      {
-        text: 'Test todo item 3',
-        checked: false,
-        category: 'GENERAL'
-      }
-    ];
+    // Make some initial todo items
+    this.pushTodoItem('Test todo item 1', false, 'GENERAL');
+    this.pushTodoItem('Test todo item 3', false, 'GENERAL');
+    this.pushTodoItem('Test todo item 2', false, 'MODULE 1');
 
-    this.initCategories();
+    this.updateCategories();
     this.initForm();
   }
 
@@ -75,13 +65,9 @@ export class TodoComponent implements OnInit {
     }
 
     // Create new todo item
-    this.tasks.push({
-      text,
-      checked: false,
-      category
-    });
+    this.pushTodoItem(text, false, category);
 
-    this.initCategories();
+    this.updateCategories();
   }
 
   public addNewCategory(): void {
@@ -92,12 +78,32 @@ export class TodoComponent implements OnInit {
       return;
     }
 
+    // Check not duplicate
+    if (this.categories.some((category: Category) => {
+      return category.name === name.toUpperCase();
+    })) {
+      this.addItemForm.controls.newCategory.reset();
+      return;
+    }
+
     this.categories.push({
       name: name.toUpperCase(),
       count: 0
     });
 
     this.addItemForm.controls.newCategory.reset();
+    this.addItemForm.controls.category.setValue(name.toUpperCase());
+  }
+
+  public deleteTodoItem(id: number): void {
+    // Find index of item to remove
+    let index: number = this.tasks.findIndex((task: TodoItem) => {
+      return task.id === id;
+    });
+
+    this.tasks.splice(index, 1);
+
+    this.updateCategories();
   }
 
   private initForm(): void {
@@ -108,7 +114,18 @@ export class TodoComponent implements OnInit {
     });
   }
 
-  private initCategories(): void {
+  private pushTodoItem(text: string, checked: boolean, category: string): void {
+    this.tasks.push({
+      text,
+      checked,
+      category,
+      id: this.taskCount++
+    });
+  }
+
+  private updateCategories(): void {
+    this.categories = [];
+
     this.tasks.map((task: TodoItem) => {
       if (this.categories.some((category: Category) => {
         return category.name === task.category;
@@ -132,6 +149,7 @@ export type TodoItem = {
   text: string;
   checked: boolean;
   category: string;
+  id: number;
 };
 
 export type Category = {

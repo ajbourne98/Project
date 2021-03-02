@@ -5,10 +5,10 @@
     <b>{{ category | titlecase }}</b>
 
     <div class="items">
-      <div class="item" *ngFor="let item of getItemsByCategory(category)" (click)="onItemCheck(item)"
-        [class.complete]="item.checked">
-        <input type="checkbox" [checked]=item.checked>
-        {{ item.text }}
+      <div class="item" *ngFor="let item of getItemsByCategory(category)" [class.complete]="item.checked">
+        <fa-icon class="delete-item-icon pointer" [icon]="faTimes" (click)="deleteTodoItem(item.id)"></fa-icon>
+        <input type="checkbox" [checked]=item.checked (click)="onItemCheck(item)" class="pointer">
+        <span class="pointer" (click)="onItemCheck(item)">{{ item.text }}</span>
       </div>
     </div>
   </div>
