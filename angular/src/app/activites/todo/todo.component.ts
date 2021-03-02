@@ -48,6 +48,9 @@ export class TodoComponent implements OnInit {
 
   public onAddTodoItemClick(event: any): void {
     event.stopPropagation();
+    this.addItemForm.reset({
+      category: [-1]
+    });
     this.showAddTodoItemModal = true;
   }
 
@@ -68,6 +71,8 @@ export class TodoComponent implements OnInit {
     this.pushTodoItem(text, false, category);
 
     this.updateCategories();
+
+    this.showAddTodoItemModal = false;
   }
 
   public addNewCategory(): void {
