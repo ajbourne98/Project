@@ -1,7 +1,7 @@
 <h2 class="title"><u>My TODO List:</u></h2>
 
 <div class="categories">
-  <div class="category" *ngFor="let category of getCategories()">
+  <div class="category" *ngFor="let category of getCategories(false)">
     <b>{{ category | titlecase }}</b>
 
     <div class="items">
@@ -20,9 +20,30 @@
 
 <app-modal *ngIf="showAddTodoItemModal" (clickOutside)="showAddTodoItemModal = false">
   <div title>Add New TODO List Item</div>
-  <div content>Add New TODO List Item</div>
+  <div content>
+    <form [formGroup]="addItemForm">
+      <!-- Category Select -->
+      <label>Category:</label>
+      <select formControlName="category" class="ml-1 w-40">
+        <option value="-1" disabled>Please choose a category...</option>
+        <option *ngFor="let category of getCategories(true)" [value]="category">{{ category | titlecase }}</option>
+      </select>
+
+      <!-- Add New Category -->
+      <div class="right">
+        <input type="text" formControlName="newCategory">
+        <button (click)="addNewCategory()">Add New Category</button>
+      </div>
+
+      <br><br>
+
+      <!-- Description of TODO Item -->
+      <label>Description:</label>
+      <input type="text" formControlName="text" class="ml-1 w-80">
+    </form>
+  </div>
   <div buttons>
-    <button class="modal-button red">Cancel</button>
-    <button class="modal-button right">Add</button>
+    <button class="modal-button red" (click)="showAddTodoItemModal = false">Cancel</button>
+    <button class="modal-button right" (click)="addTodoItem()">Add</button>
   </div>
 </app-modal>
