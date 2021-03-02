@@ -19,4 +19,10 @@
 </button>
 
 <app-modal *ngIf="showAddTodoItemModal" (clickOutside)="showAddTodoItemModal = false">
+  <div title>Add New TODO List Item</div>
+  <div content>Add New TODO List Item</div>
+  <div buttons>
+    <button class="modal-button red">Cancel</button>
+    <button class="modal-button right">Add</button>
+  </div>
 </app-modal>

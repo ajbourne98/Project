@@ -13,3 +13,16 @@ body {
   margin: 0;
   height: 100vh;
 }
+
+.pointer {
+  cursor: pointer;
+}
+
+button {
+  background-color: white;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f2f2f2;
+  }
+}

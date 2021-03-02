@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ClickOutsideModule } from 'ng-click-outside';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -22,7 +23,8 @@ import { ModalComponent } from './shared/modal/modal.component';
   imports: [
     BrowserModule,
     FontAwesomeModule,
-    ClickOutsideModule
+    ClickOutsideModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-todo',
@@ -7,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoComponent implements OnInit {
   public showAddTodoItemModal = false;
+  public addItemForm: FormGroup;
 
   private tasks: todoItem[];
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.tasks = [
@@ -30,6 +32,8 @@ export class TodoComponent implements OnInit {
         category: 'general'
       }
     ];
+
+    this.initForm();
   }
 
   public getTodoItems(): todoItem[] {
@@ -65,6 +69,12 @@ export class TodoComponent implements OnInit {
   public onAddTodoItemClick(event: any): void {
     event.stopPropagation();
     this.showAddTodoItemModal = true;
+  }
+
+  private initForm(): void {
+    this.addItemForm = this.fb.group({
+      text: [''],
+    });
   }
 }
 
