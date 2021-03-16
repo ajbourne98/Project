@@ -1,0 +1,10 @@
+@import "../../styles.scss";
+
+.content {
+  position: absolute;
+  top: $header-height + $nav-height;
+  right: $activites-width;
+  left: $sidebar-width;
+  bottom: 0;
+  padding: 2rem;
+}

@@ -10,6 +10,9 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { ActivitesComponent } from './activites/activites.component';
 import { TodoComponent } from './activites/todo/todo.component';
 import { ModalComponent } from './shared/modal/modal.component';
+import { AppRoutingModule } from './app-routing.module';
+import { ContentComponent } from './content/content.component';
+import { HomeComponent } from './content/home/home.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +21,16 @@ import { ModalComponent } from './shared/modal/modal.component';
     SidebarComponent,
     ActivitesComponent,
     TodoComponent,
-    ModalComponent
+    ModalComponent,
+    ContentComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     FontAwesomeModule,
     ClickOutsideModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
