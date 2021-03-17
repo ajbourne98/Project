@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
+import { ModuleService } from '../services/module-service.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -12,39 +13,25 @@ export class SidebarComponent implements OnInit {
 
   private sidebarItems: SidebarItem[];
 
-  constructor() { }
+  constructor(private moduleService: ModuleService) { }
 
   ngOnInit(): void {
     this.sidebarItems = [
       {
         label: 'Home',
-        subItems: null
+        subItems: null,
+        link: 'home'
       },
       {
         label: 'Modules',
-        subItems: [
-          {
-            label: 'Module 1',
-            subItems: null
-          },
-          {
-            label: 'Module 2',
-            subItems: null
-          },
-          {
-            label: 'Module 3',
-            subItems: null
-          },
-          {
-            label: 'Module 4',
-            subItems: null
-          }
-        ],
-        expanded: false
+        subItems: this.moduleService.getModulesForSidebar(),
+        expanded: false,
+        link: null
       },
       {
         label: 'My Stuff',
-        subItems: null
+        subItems: null,
+        link: null
       },
     ];
   }
@@ -62,4 +49,5 @@ export type SidebarItem = {
   label: string;
   subItems: SidebarItem[];
   expanded?: boolean;
+  link: string;
 }

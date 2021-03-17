@@ -1,9 +1,13 @@
 .box {
   border: 1px solid black;
+  overflow-y: auto;
 
   .title {
-    margin-left: 1rem;
-    // font-weight: normal;
+    padding: 1rem 1rem 0.2rem 1rem;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    margin: 0;
   }
 }
 

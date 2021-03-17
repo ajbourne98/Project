@@ -1,0 +1,50 @@
+<div class="box1 box">
+  <h2 class="title">This Week's Lectures:</h2>
+  <div class="lecture" *ngFor="let lecture of module.lectures">
+    <fa-icon [icon]="faVideo" class="fa-5x"></fa-icon>
+    <div class="title">
+      <span>{{ lecture.name }}</span>
+    </div>
+  </div>
+
+  <div class="lecture">
+    <fa-icon [icon]="faArrowRight" class="fa-5x"></fa-icon>
+    <div class="title">
+      <span>All Lectures</span>
+    </div>
+  </div>
+</div>
+
+<div class="box2 box upper-margin">
+  <h2 class="title">Unit Overview:</h2>
+  <div class="lorem">
+    <p>{{ lorem.generateSentences(1) }}</p>
+    <p>{{ lorem.generateSentences(2) }}</p>
+    <p>{{ lorem.generateSentences(1) }}</p>
+    <p>{{ lorem.generateSentences(3) }}</p>
+    <p>{{ lorem.generateSentences(2) }}</p>
+    <p>{{ lorem.generateSentences(1) }}</p>
+    <p>{{ lorem.generateSentences(1) }}</p>
+    <p>{{ lorem.generateSentences(2) }}</p>
+  </div>
+</div>
+
+<div class="box3 box upper-margin">
+  <h2 class="title">Recommended Reading:</h2>
+  <div class="lorem">
+    <p>{{ lorem.generateSentences(1) }}</p>
+    <p>{{ lorem.generateSentences(2) }}</p>
+    <p>{{ lorem.generateSentences(1) }}</p>
+    <p>{{ lorem.generateSentences(3) }}</p>
+    <p>{{ lorem.generateSentences(2) }}</p>
+  </div>
+</div>
+
+<div class="box4 box upper-margin">
+  <h2 class="title">Assessments:</h2>
+  <div class="lorem">
+    <p>{{ lorem.generateSentences(1) }}</p>
+    <p>{{ lorem.generateSentences(2) }}</p>
+    <p>{{ lorem.generateSentences(1) }}</p>
+  </div>
+</div>

@@ -2,11 +2,11 @@
   <div class="sidebar-items">
     <div class="item" *ngFor="let item of getSidebarItems()">
       <fa-icon [icon]="item.expanded ? faMinus : faPlus" *ngIf="item.subItems" (click)="onItemClick(item)"></fa-icon>
-      {{ item.label }}
+      <span [routerLink]="[item.link]">{{item.label }}</span>
 
       <div class="sub-items" *ngIf="item.subItems && item.expanded">
         <div class="sub-item" *ngFor="let subItem of item.subItems">
-          {{ subItem.label }}
+          <span [routerLink]="[subItem.link ? subItem.link : null]">{{ subItem.label }}</span>
         </div>
       </div>
     </div>

@@ -13,6 +13,8 @@ import { ModalComponent } from './shared/modal/modal.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ContentComponent } from './content/content.component';
 import { HomeComponent } from './content/home/home.component';
+import { ModuleComponent } from './content/modules/module/module.component';
+import { ModulesComponent } from './content/modules/modules.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { HomeComponent } from './content/home/home.component';
     TodoComponent,
     ModalComponent,
     ContentComponent,
-    HomeComponent
+    HomeComponent,
+    ModuleComponent,
+    ModulesComponent
   ],
   imports: [
     BrowserModule,
