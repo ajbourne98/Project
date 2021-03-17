@@ -15,6 +15,7 @@ import { ContentComponent } from './content/content.component';
 import { HomeComponent } from './content/home/home.component';
 import { ModuleComponent } from './content/modules/module/module.component';
 import { ModulesComponent } from './content/modules/modules.component';
+import { LecturesComponent } from './content/modules/lectures/lectures.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ModulesComponent } from './content/modules/modules.component';
     ContentComponent,
     HomeComponent,
     ModuleComponent,
-    ModulesComponent
+    ModulesComponent,
+    LecturesComponent
   ],
   imports: [
     BrowserModule,

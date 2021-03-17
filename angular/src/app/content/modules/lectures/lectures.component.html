@@ -1,0 +1,18 @@
+<div class="content">
+  <div class="header">
+    <fa-icon [icon]="faArrowLeft" class="fa-2x"></fa-icon>
+    <h2>Lectures</h2>
+    <div class="filter">
+      filter
+    </div>
+  </div>
+
+  <div class="lectures">
+    <div class="lecture" *ngFor="let lecture of module.lectures">
+      <fa-icon [icon]="faVideo" class="fa-5x"></fa-icon>
+      <div class="title">
+        <span>{{ lecture.name }}</span>
+      </div>
+    </div>
+  </div>
+</div>
