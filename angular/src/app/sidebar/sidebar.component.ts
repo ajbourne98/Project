@@ -31,7 +31,7 @@ export class SidebarComponent implements OnInit {
       {
         label: 'My Stuff',
         subItems: null,
-        link: null
+        link: 'my-stuff'
       },
     ];
   }

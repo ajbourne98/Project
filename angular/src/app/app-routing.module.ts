@@ -4,10 +4,12 @@ import { HomeComponent } from './content/home/home.component';
 import { LecturesComponent } from './content/modules/lectures/lectures.component';
 import { ModuleComponent } from './content/modules/module/module.component';
 import { ModulesComponent } from './content/modules/modules.component';
+import { MyStuffComponent } from './content/my-stuff/my-stuff.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomeComponent },
+  { path: 'my-stuff', component: MyStuffComponent },
   {
     path: 'modules', component: ModulesComponent, children: [
       { path: '', pathMatch: 'full', redirectTo: '/home' },
