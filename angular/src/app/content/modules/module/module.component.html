@@ -1,6 +1,6 @@
 <div class="box1 box">
   <h2 class="title">This Week's Lectures:</h2>
-  <div class="lecture" *ngFor="let lecture of getLecturesForWeek()" [class.watched]="lecture.watched">
+  <div class="lecture pointer" *ngFor="let lecture of getLecturesForWeek()" [class.watched]="lecture.watched">
     <input type="checkbox" [checked]="lecture.watched" (click)="toggleLectureWatched(lecture.id)">
     <fa-icon [icon]="faVideo" class="fa-5x"></fa-icon>
     <div class="title">
@@ -8,7 +8,7 @@
     </div>
   </div>
 
-  <div class="lecture" [routerLink]="['lectures']">
+  <div class="lecture pointer" [routerLink]="['lectures']">
     <fa-icon [icon]="faArrowRight" class="fa-5x"></fa-icon>
     <div class="title">
       <span>All Lectures</span>
