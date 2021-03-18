@@ -47,7 +47,6 @@ export class SidebarComponent implements OnInit {
   }
 
   public isCurrentPage(url: string): boolean {
-    console.log(this.router.url, url);
     return this.router.url === `/${url}`;
   }
 }

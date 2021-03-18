@@ -43,7 +43,5 @@ export class LecturesComponent implements OnInit {
     if (sortBy === 'DESC') {
       this.lectures = this.lectures.reverse();
     }
-
-    console.log(sortBy);
   }
 }
