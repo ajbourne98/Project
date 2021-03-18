@@ -1,10 +1,11 @@
 <div class="sidebar">
   <div class="sidebar-items">
-    <div class="item" *ngFor="let item of getSidebarItems()">
-      <fa-icon [icon]="item.expanded ? faMinus : faPlus" *ngIf="item.subItems" (click)="onItemClick(item)"></fa-icon>
-      <span [routerLink]="[item.link]">{{item.label }}</span>
+    <div class="item pointer" *ngFor="let item of getSidebarItems()" [class.expanded]="item.subItems && item.expanded"
+      (click)="onItemClick(item)">
+      <fa-icon [icon]="item.expanded ? faMinus : faPlus" *ngIf="item.subItems"></fa-icon>
+      <span [routerLink]="[item.link]" class="label">{{item.label }}</span>
 
-      <div class="sub-items" *ngIf="item.subItems && item.expanded">
+      <div class="sub-items" *ngIf="item.subItems && item.expanded" (click)="$event.stopPropagation()">
         <div class="sub-item" *ngFor="let subItem of item.subItems">
           <span [routerLink]="[subItem.link ? subItem.link : null]">{{ subItem.label }}</span>
         </div>
