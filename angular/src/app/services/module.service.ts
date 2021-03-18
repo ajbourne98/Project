@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Assignment, Reading } from '../shared/definitions';
+import { Assignment, ImportantDeadline, Reading } from '../shared/definitions';
 import { SidebarItem } from '../sidebar/sidebar.component';
 
 @Injectable({
@@ -39,8 +39,6 @@ export class ModuleService {
     });
 
     lecture.watched = !lecture.watched;
-
-    console.log(lecture.watched);
   }
 
   private initModules(): void {
@@ -55,6 +53,10 @@ export class ModuleService {
         assignments: [
           { id: 0, moduleId: 0, name: 'Test Assignment 1' },
           { id: 1, moduleId: 0, name: 'Test Assignment 2' }
+        ],
+        deadlines: [
+          { date: new Date(), info: 'Test deadline 1' },
+          { date: new Date(), info: 'Test deadline 2' },
         ]
       },
       {
@@ -69,6 +71,10 @@ export class ModuleService {
           { id: 2, moduleId: 1, name: 'Test Assignment 1' },
           { id: 3, moduleId: 1, name: 'Test Assignment 2' },
           { id: 4, moduleId: 1, name: 'Test Assignment 3' }
+        ],
+        deadlines: [
+          { date: new Date(), info: 'Test deadline 1' },
+          { date: new Date(), info: 'Test deadline 2' },
         ]
       },
       {
@@ -81,6 +87,11 @@ export class ModuleService {
         assignments: [
           { id: 5, moduleId: 2, name: 'Test Assignment 1' },
           { id: 6, moduleId: 2, name: 'Test Assignment 2' }
+        ],
+        deadlines: [
+          { date: new Date(), info: 'Test deadline 1' },
+          { date: new Date(), info: 'Test deadline 2' },
+          { date: new Date(), info: 'Test deadline 3' },
         ]
       },
       {
@@ -94,6 +105,9 @@ export class ModuleService {
           { id: 7, moduleId: 3, name: 'Test Assignment 1' },
           { id: 8, moduleId: 3, name: 'Test Assignment 2' },
           { id: 9, moduleId: 3, name: 'Test Assignment 3' }
+        ],
+        deadlines: [
+          { date: new Date(), info: 'Test deadline 1' },
         ]
       },
     ];
@@ -125,6 +139,7 @@ export type Module = {
   lectures: Lecture[];
   reading: Reading[];
   assignments: Assignment[];
+  deadlines: ImportantDeadline[];
 };
 
 export type Lecture = {

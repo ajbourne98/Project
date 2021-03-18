@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { faPlus, faMinus, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import { ModuleService } from '../services/module-service.service';
+import { ModuleService } from '../services/module.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -27,7 +27,7 @@ export class SidebarComponent implements OnInit {
       {
         label: 'Modules',
         subItems: this.moduleService.getModulesForSidebar(),
-        expanded: false,
+        expanded: this.moduleService.getModulesForSidebar().length < 5,
         link: null
       },
       {

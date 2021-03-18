@@ -9,3 +9,30 @@
   top: 9rem;
   border-left: 3px solid #002b56;
 }
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+app-todo {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  overflow-y: auto;
+
+  &.half-height {
+    height: 50%;
+    border-bottom: 1.5px solid #002b56;
+  }
+}
+
+app-deadlines {
+  height: 50%;
+  width: 100%;
+  top: 50%;
+  position: absolute;
+  overflow-y: auto;
+  border-top: 1.5px solid #002b56;
+}

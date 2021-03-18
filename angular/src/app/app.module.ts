@@ -17,6 +17,7 @@ import { ModuleComponent } from './content/modules/module/module.component';
 import { ModulesComponent } from './content/modules/modules.component';
 import { LecturesComponent } from './content/modules/lectures/lectures.component';
 import { MyStuffComponent } from './content/my-stuff/my-stuff.component';
+import { DeadlinesComponent } from './activites/deadlines/deadlines.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MyStuffComponent } from './content/my-stuff/my-stuff.component';
     ModuleComponent,
     ModulesComponent,
     LecturesComponent,
-    MyStuffComponent
+    MyStuffComponent,
+    DeadlinesComponent
   ],
   imports: [
     BrowserModule,

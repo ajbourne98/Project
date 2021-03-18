@@ -15,3 +15,8 @@ export type Assignment = {
   name: string;
   id: number;
 };
+
+export type ImportantDeadline = {
+  date: Date;
+  info: string;
+};

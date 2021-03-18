@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { faArrowLeft, faVideo } from '@fortawesome/free-solid-svg-icons';
-import { Lecture, Module, ModuleService } from 'src/app/services/module-service.service';
+import { Lecture, Module, ModuleService } from 'src/app/services/module.service';
 
 @Component({
   selector: 'app-lectures',

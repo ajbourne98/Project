@@ -1,0 +1,7 @@
+<h2 class="title"><u>Important Deadlines:</u></h2>
+
+<ul>
+  <li *ngFor="let deadline of deadlines" class="item">
+    <b>{{ formatDate(deadline.date) }}</b>: {{ deadline.info }}
+  </li>
+</ul>

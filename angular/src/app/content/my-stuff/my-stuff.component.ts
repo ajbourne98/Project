@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoremIpsum } from "lorem-ipsum";
-import { ModuleService } from 'src/app/services/module-service.service';
+import { ModuleService } from 'src/app/services/module.service';
 import { MyStuff, MyStuffService } from 'src/app/services/my-stuff.service';
 import { Reading } from 'src/app/shared/definitions';
 
