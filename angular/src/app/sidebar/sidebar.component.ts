@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
+import { faPlus, faMinus, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { ModuleService } from '../services/module-service.service';
 
 @Component({
@@ -10,10 +11,11 @@ import { ModuleService } from '../services/module-service.service';
 export class SidebarComponent implements OnInit {
   public faPlus = faPlus;
   public faMinus = faMinus;
+  public faChevronRight = faChevronRight;
 
   private sidebarItems: SidebarItem[];
 
-  constructor(private moduleService: ModuleService) { }
+  constructor(private moduleService: ModuleService, private router: Router) { }
 
   ngOnInit(): void {
     this.sidebarItems = [
@@ -42,6 +44,11 @@ export class SidebarComponent implements OnInit {
 
   public onItemClick(item: SidebarItem): void {
     item.expanded = !item.expanded;
+  }
+
+  public isCurrentPage(url: string): boolean {
+    console.log(this.router.url, url);
+    return this.router.url === `/${url}`;
   }
 }
 

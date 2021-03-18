@@ -3,15 +3,22 @@
 .sidebar {
   height: $sidebar-height;
   width: $sidebar-width;
-  border-right: 1px solid black;
+  border-right: 3px solid #002b56;
 }
 
 .sidebar-items {
   .item {
+    min-height: 4rem;
+    line-height: 1rem;
     width: 100%;
     padding: 1.5rem 0 1.5rem 0;
     text-align: center;
     position: relative;
+
+    &.selected {
+      color: #002b56;
+      font-weight: bold;
+    }
 
     &:hover {
       background-color: #002b56;
@@ -32,7 +39,14 @@
 
   fa-icon {
     position: absolute;
-    left: 1rem;
+
+    &.expand {
+      left: 1rem;
+    }
+
+    &.current-page-icon {
+      right: 1rem;
+    }
   }
 
   .sub-items {
@@ -43,6 +57,11 @@
       width: 100%;
       padding: 1rem 2rem 1rem 0;
       text-align: right;
+
+      &.selected {
+        color: #002b56;
+        font-weight: bold;
+      }
 
       &:hover {
         background-color: #002b56;

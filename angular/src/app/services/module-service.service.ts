@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Assignment, Reading } from '../shared/definitions';
 import { SidebarItem } from '../sidebar/sidebar.component';
 
 @Injectable({
@@ -47,22 +48,53 @@ export class ModuleService {
       {
         name: 'Module 1',
         id: 0,
-        lectures: this.generateLectures(24)
+        lectures: this.generateLectures(24),
+        reading: [
+          { id: 0, moduleId: 0, name: 'Some Book 1' }
+        ],
+        assignments: [
+          { id: 0, moduleId: 0, name: 'Test Assignment 1' },
+          { id: 1, moduleId: 0, name: 'Test Assignment 2' }
+        ]
       },
       {
         name: 'Module 2',
         id: 1,
-        lectures: this.generateLectures(3)
+        lectures: this.generateLectures(3),
+        reading: [
+          { id: 1, moduleId: 1, name: 'Some Book 1' },
+          { id: 2, moduleId: 1, name: 'Some Book 2' }
+        ],
+        assignments: [
+          { id: 2, moduleId: 1, name: 'Test Assignment 1' },
+          { id: 3, moduleId: 1, name: 'Test Assignment 2' },
+          { id: 4, moduleId: 1, name: 'Test Assignment 3' }
+        ]
       },
       {
         name: 'Module 3',
         id: 2,
-        lectures: this.generateLectures(2)
+        lectures: this.generateLectures(2),
+        reading: [
+          { id: 3, moduleId: 2, name: 'Some Book 1' }
+        ],
+        assignments: [
+          { id: 5, moduleId: 2, name: 'Test Assignment 1' },
+          { id: 6, moduleId: 2, name: 'Test Assignment 2' }
+        ]
       },
       {
         name: 'Module 4',
         id: 3,
-        lectures: this.generateLectures(3)
+        lectures: this.generateLectures(3),
+        reading: [
+          { id: 4, moduleId: 3, name: 'Some Book 1' }
+        ],
+        assignments: [
+          { id: 7, moduleId: 3, name: 'Test Assignment 1' },
+          { id: 8, moduleId: 3, name: 'Test Assignment 2' },
+          { id: 9, moduleId: 3, name: 'Test Assignment 3' }
+        ]
       },
     ];
   }
@@ -91,6 +123,8 @@ export type Module = {
   name: string;
   id: number;
   lectures: Lecture[];
+  reading: Reading[];
+  assignments: Assignment[];
 };
 
 export type Lecture = {

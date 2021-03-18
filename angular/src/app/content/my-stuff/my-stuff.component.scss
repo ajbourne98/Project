@@ -1,5 +1,5 @@
 .box {
-  border: 1px solid black;
+  border: 3px solid #002b56;
   overflow-y: auto;
 
   .title {
@@ -32,4 +32,20 @@
 
 .lorem {
   margin: 1rem;
+}
+
+.reading, .assignment {
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  margin-right: 2rem;
+
+  .add-to-my-stuff {
+    font-size: 0.8rem;
+    text-decoration: underline;
+    color: blue;
+    float: right;
+  }
+
+  .module-name {
+    font-size: 0.7rem;
+  }
 }

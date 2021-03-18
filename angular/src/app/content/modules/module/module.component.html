@@ -18,34 +18,44 @@
 
 <div class="box2 box upper-margin">
   <h2 class="title">Unit Overview:</h2>
-  <div class="lorem">
-    <p>{{ lorem.generateSentences(1) }}</p>
-    <p>{{ lorem.generateSentences(2) }}</p>
-    <p>{{ lorem.generateSentences(1) }}</p>
-    <p>{{ lorem.generateSentences(3) }}</p>
-    <p>{{ lorem.generateSentences(2) }}</p>
-    <p>{{ lorem.generateSentences(1) }}</p>
-    <p>{{ lorem.generateSentences(1) }}</p>
-    <p>{{ lorem.generateSentences(2) }}</p>
-  </div>
+  <p class="lorem">This is the unit overview for {{ module.name }}.
+    <br><br>
+    Lorem ipsum dolor sit amet, consectetur adipiscing
+    elit. Proin ac placerat turpis, sed fringilla ligula. Fusce dapibus
+    urna vel est tristique, et mollis purus lacinia. Ut rhoncus, tellus et malesuada faucibus, mi est eleifend lacus,
+    quis
+    consequat augue lorem id felis. Ut euismod tempus ante, nec condimentum ligula porttitor at. Duis non nisl vitae
+    risus
+    tempus commodo id et erat. Quisque odio neque, ornare a pretium et, interdum sed velit. Morbi ornare accumsan massa
+    vel
+    ultrices. <br><br> Nam varius luctus consectetur. Aenean consequat orci vitae nibh auctor, at ullamcorper augue
+    vulputate.
+    Etiam
+    faucibus purus id tellus suscipit, et vehicula dolor imperdiet. Praesent ut mi quis mauris vulputate pellentesque
+    auctor
+    eu lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget imperdiet metus, eu suscipit velit.
+    Quisque
+    non neque in nibh maximus facilisis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+    turpis egestas. Mauris condimentum neque eget lacus faucibus, ut luctus dolor lacinia.
+  </p>
 </div>
 
 <div class="box3 box upper-margin">
   <h2 class="title">Recommended Reading:</h2>
-  <div class="lorem">
-    <p>{{ lorem.generateSentences(1) }}</p>
-    <p>{{ lorem.generateSentences(2) }}</p>
-    <p>{{ lorem.generateSentences(1) }}</p>
-    <p>{{ lorem.generateSentences(3) }}</p>
-    <p>{{ lorem.generateSentences(2) }}</p>
-  </div>
+  <ul>
+    <li *ngFor="let reading of module.reading" class="reading">
+      {{ reading.name }}
+      <span *ngIf="myStuff" class="pointer"
+        (click)="checkReadingInMyStuff(reading) ? removeReadingFromMyStuff(reading) :addReadingToMyStuff(reading)">{{
+        checkReadingInMyStuff(reading) ?
+        'Remove from' : 'Add to' }} my reading</span>
+    </li>
+  </ul>
 </div>
 
 <div class="box4 box upper-margin">
   <h2 class="title">Assessments:</h2>
-  <div class="lorem">
-    <p>{{ lorem.generateSentences(1) }}</p>
-    <p>{{ lorem.generateSentences(2) }}</p>
-    <p>{{ lorem.generateSentences(1) }}</p>
-  </div>
+  <ul>
+    <li *ngFor="let assignment of module.assignments" class="assignment">{{ assignment.name }}</li>
+  </ul>
 </div>

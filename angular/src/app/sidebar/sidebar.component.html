@@ -1,13 +1,21 @@
 <div class="sidebar">
   <div class="sidebar-items">
     <div class="item pointer" *ngFor="let item of getSidebarItems()" [class.expanded]="item.subItems && item.expanded"
-      [routerLink]="[item.link]" (click)="onItemClick(item)">
-      <fa-icon [icon]="item.expanded ? faMinus : faPlus" *ngIf="item.subItems"></fa-icon>
-      <span class="label">{{item.label }}</span>
+      [class.selected]="isCurrentPage(item.link)" [routerLink]="[item.link]" (click)="onItemClick(item)">
+      <fa-icon [icon]="item.expanded ? faMinus : faPlus" *ngIf="item.subItems" class="expand"></fa-icon>
+      <span class="label">
+        {{item.label }}
+        <fa-icon [icon]="faChevronRight" *ngIf="isCurrentPage(item.link)" class="current-page-icon"></fa-icon>
+      </span>
 
       <div class="sub-items" *ngIf="item.subItems && item.expanded" (click)="$event.stopPropagation()">
-        <div class="sub-item" *ngFor="let subItem of item.subItems" [routerLink]="[subItem.link ? subItem.link : null]">
-          <span>{{ subItem.label }}</span>
+        <div class="sub-item" *ngFor="let subItem of item.subItems" [routerLink]="[subItem.link ? subItem.link : null]"
+          [class.selected]="isCurrentPage(subItem.link)">
+          <span>
+            {{ subItem.label }}
+            <fa-icon [icon]="faChevronRight" *ngIf="isCurrentPage(subItem.link)" class="current-page-icon fa-xs">
+            </fa-icon>
+          </span>
         </div>
       </div>
     </div>

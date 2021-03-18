@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faTimes, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-todo',
@@ -11,6 +11,7 @@ export class TodoComponent implements OnInit {
   public showAddTodoItemModal = false;
   public addItemForm: FormGroup;
   public faTimes = faTimes;
+  public faPlus = faPlus;
 
   private tasks: TodoItem[] = [];
   private categories: Category[] = [];

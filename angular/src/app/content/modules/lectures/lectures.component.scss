@@ -1,11 +1,7 @@
 .header {
-  display: flow-root;
   height: 2.5rem;
   background-color: white;
-  position: sticky;
-  top: -2rem;
   border-bottom: 1px solid black;
-  z-index: 3;
   margin: -2rem -2rem 0 -2rem;
   padding: 1rem 2rem 3rem 2rem;
   line-height: 2.5rem;
@@ -52,7 +48,6 @@
     top: 5px;
     left: 5px;
     transform: scale(1.5);
-    z-index: 2;
   }
 
   fa-icon {

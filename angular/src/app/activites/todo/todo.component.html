@@ -24,22 +24,23 @@
     <form [formGroup]="addItemForm">
       <!-- Category Select -->
       <label>Category:</label>
-      <select formControlName="category" class="ml-1 w-40">
+      <select formControlName="category" class="">
         <option value="-1" disabled>Please choose a category...</option>
         <option *ngFor="let category of getCategories(true)" [value]="category">{{ category | titlecase }}</option>
       </select>
 
       <!-- Add New Category -->
-      <div class="right">
-        <input type="text" formControlName="newCategory">
-        <button (click)="addNewCategory()">Add New Category</button>
-      </div>
+      <label class="add-category-label">Add New Category:</label>
+      <input type="text" formControlName="newCategory" class="add-new-category">
+      <button class="add-new-button" (click)="addNewCategory()">
+        <fa-icon class="pointer" [icon]="faPlus"></fa-icon>
+      </button>
 
       <br><br>
 
       <!-- Description of TODO Item -->
       <label>Description:</label>
-      <input type="text" formControlName="text" class="ml-1 w-80">
+      <input type="text" formControlName="text" class="description">
     </form>
   </div>
   <div buttons>

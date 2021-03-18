@@ -3,7 +3,8 @@ import { Lecture, Module, ModuleService } from 'src/app/services/module-service.
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { faArrowRight, faVideo } from '@fortawesome/free-solid-svg-icons';
 import { LoremIpsum } from "lorem-ipsum";
-import { DateService } from 'src/app/services/date.service';
+import { Reading } from 'src/app/shared/definitions';
+import { MyStuff, MyStuffService } from 'src/app/services/my-stuff.service';
 
 @Component({
   selector: 'app-module',
@@ -14,6 +15,7 @@ export class ModuleComponent implements OnInit {
   public module: Module = null;
   public faArrowRight = faArrowRight;
   public faVideo = faVideo;
+  public myStuff: MyStuff;
 
   public lorem = new LoremIpsum({
     sentencesPerParagraph: {
@@ -26,7 +28,11 @@ export class ModuleComponent implements OnInit {
     }
   });
 
-  constructor(private moduleService: ModuleService, private _Activatedroute: ActivatedRoute, private dateService: DateService) { }
+  constructor(
+    private moduleService: ModuleService,
+    private _Activatedroute: ActivatedRoute,
+    private myStuffService: MyStuffService
+  ) { }
 
   ngOnInit(): void {
     let id: string;
@@ -35,6 +41,10 @@ export class ModuleComponent implements OnInit {
       id = params.get('id');
       this.module = this.moduleService.getModuleById(+id);
       this.getLecturesForWeek();
+    });
+
+    this.myStuffService.myStuffObservable.subscribe((stuff: MyStuff) => {
+      this.myStuff = stuff;
     });
   }
 
@@ -49,5 +59,17 @@ export class ModuleComponent implements OnInit {
 
   public toggleLectureWatched(lectureId: number): void {
     this.moduleService.toggleLectureWatched(this.module.id, lectureId);
+  }
+
+  public addReadingToMyStuff(reading: Reading): void {
+    this.myStuffService.addReadingToMyStuff(reading);
+  }
+
+  public removeReadingFromMyStuff(reading: Reading): void {
+    this.myStuffService.removeReadingFromMyStuff(reading);
+  }
+
+  public checkReadingInMyStuff(reading: Reading): boolean {
+    return this.myStuff.reading.includes(reading);
   }
 }
