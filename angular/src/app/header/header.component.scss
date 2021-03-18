@@ -37,6 +37,7 @@
 .nav {
   height: $nav-height;
   border-bottom: 1px solid black;
+  background-color: #002b56;
 
   .left {
     float: left;
@@ -51,5 +52,12 @@
 button {
   width: 6rem;
   height: 3rem;
-  background-color: white;
+  background-color: #002b56;
+  border: none;
+  color: white;
+
+  &:hover {
+    background-color: #004489;
+    transition: 0.3s;
+  }
 }

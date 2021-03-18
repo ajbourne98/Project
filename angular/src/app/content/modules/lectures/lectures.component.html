@@ -1,14 +1,19 @@
 <div class="content">
   <div class="header">
-    <fa-icon [icon]="faArrowLeft" class="fa-2x"></fa-icon>
+    <fa-icon [icon]="faArrowLeft" class="fa-2x" (click)="goBackToModule()"></fa-icon>
     <h2>Lectures</h2>
     <div class="filter">
-      filter
+      <b>Sort by:</b>
+      <select (change)="sortLectures($event.target.value)">
+        <option selected value="ASC">Date (ASC)</option>
+        <option value="DESC">Date (DESC)</option>
+      </select>
     </div>
   </div>
 
-  <div class="lectures">
-    <div class="lecture" *ngFor="let lecture of module.lectures">
+  <div class=" lectures">
+    <div class="lecture" *ngFor="let lecture of lectures" [class.watched]="lecture.watched">
+      <input type="checkbox" [checked]="lecture.watched" (click)="toggleLectureWatched(lecture.id)">
       <fa-icon [icon]="faVideo" class="fa-5x"></fa-icon>
       <div class="title">
         <span>{{ lecture.name }}</span>

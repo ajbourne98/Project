@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Module, ModuleService } from 'src/app/services/module-service.service';
+import { Lecture, Module, ModuleService } from 'src/app/services/module-service.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { faArrowRight, faVideo } from '@fortawesome/free-solid-svg-icons';
 import { LoremIpsum } from "lorem-ipsum";
+import { DateService } from 'src/app/services/date.service';
 
 @Component({
   selector: 'app-module',
@@ -25,7 +26,7 @@ export class ModuleComponent implements OnInit {
     }
   });
 
-  constructor(private moduleService: ModuleService, private _Activatedroute: ActivatedRoute) { }
+  constructor(private moduleService: ModuleService, private _Activatedroute: ActivatedRoute, private dateService: DateService) { }
 
   ngOnInit(): void {
     let id: string;
@@ -33,6 +34,20 @@ export class ModuleComponent implements OnInit {
     this._Activatedroute.paramMap.subscribe((params: ParamMap) => {
       id = params.get('id');
       this.module = this.moduleService.getModuleById(+id);
+      this.getLecturesForWeek();
     });
+  }
+
+  public getLecturesForWeek(): Lecture[] {
+    let today = new Date(), lastWeek = new Date();
+    lastWeek.setDate(lastWeek.getDate() - 7);
+
+    return this.module.lectures.filter((lecture: Lecture) => {
+      return lecture.date >= lastWeek && lecture.date <= today;
+    });
+  }
+
+  public toggleLectureWatched(lectureId: number): void {
+    this.moduleService.toggleLectureWatched(this.module.id, lectureId);
   }
 }

@@ -49,6 +49,20 @@
   margin-left: 1rem;
   margin-top: 1rem;
   display: inline-block;
+  min-height: 200px;
+  max-height: 250px;
+
+  &.watched {
+    opacity: 0.4;
+  }
+
+  input {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    transform: scale(1.5);
+    z-index: 2;
+  }
 
   fa-icon {
     top: 50%;
