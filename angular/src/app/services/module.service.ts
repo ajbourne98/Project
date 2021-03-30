@@ -46,7 +46,7 @@ export class ModuleService {
       {
         name: 'Module 1',
         id: 0,
-        lectures: this.generateLectures(24),
+        lectures: this.generateLectures(12),
         reading: [
           { id: 0, moduleId: 0, name: 'Some Book 1' }
         ],
@@ -126,7 +126,7 @@ export class ModuleService {
         watched: false
       });
 
-      date.setDate(date.getDate() + 7);
+      date.setDate(date.getDate() + 2);
     }
 
     return lectures;
