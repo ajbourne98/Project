@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Lecture, Module, ModuleService } from 'src/app/services/module.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { faArrowRight, faVideo } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faVideo, faFilePdf } from '@fortawesome/free-solid-svg-icons';
 import { LoremIpsum } from "lorem-ipsum";
 import { Reading } from 'src/app/shared/definitions';
 import { MyStuff, MyStuffService } from 'src/app/services/my-stuff.service';
@@ -15,6 +15,7 @@ import { DeadlineService } from 'src/app/services/deadline.service';
 export class ModuleComponent implements OnInit {
   public module: Module = null;
   public faArrowRight = faArrowRight;
+  public faFilePdf = faFilePdf;
   public faVideo = faVideo;
   public myStuff: MyStuff;
 

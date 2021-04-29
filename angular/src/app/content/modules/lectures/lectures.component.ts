@@ -23,7 +23,7 @@ export class LecturesComponent implements OnInit {
       id = params.get('id');
       this.module = this.moduleService.getModuleById(+id);
       this.lectures = this.module.lectures;
-      this.sortLectures('ASC');
+      this.sortLectures('DESC');
     });
   }
 

@@ -18,25 +18,24 @@
 
 <div class="box2 box upper-margin">
   <h2 class="title">Unit Overview:</h2>
-  <p class="lorem">This is the unit overview for {{ module.name }}.
+  <p class="lorem">
+    <b>Aims:</b>
+    To introduce students to the techniques, tools and pitfalls of cryptography (including authentication etc.).
     <br><br>
-    Lorem ipsum dolor sit amet, consectetur adipiscing
-    elit. Proin ac placerat turpis, sed fringilla ligula. Fusce dapibus
-    urna vel est tristique, et mollis purus lacinia. Ut rhoncus, tellus et malesuada faucibus, mi est eleifend lacus,
-    quis
-    consequat augue lorem id felis. Ut euismod tempus ante, nec condimentum ligula porttitor at. Duis non nisl vitae
-    risus
-    tempus commodo id et erat. Quisque odio neque, ornare a pretium et, interdum sed velit. Morbi ornare accumsan massa
-    vel
-    ultrices. <br><br> Nam varius luctus consectetur. Aenean consequat orci vitae nibh auctor, at ullamcorper augue
-    vulputate.
-    Etiam
-    faucibus purus id tellus suscipit, et vehicula dolor imperdiet. Praesent ut mi quis mauris vulputate pellentesque
-    auctor
-    eu lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget imperdiet metus, eu suscipit velit.
-    Quisque
-    non neque in nibh maximus facilisis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-    turpis egestas. Mauris condimentum neque eget lacus faucibus, ut luctus dolor lacinia.
+    <b>Skills:</b>
+    Application of Number (T/F, A), Problem Solving (T/F).
+    <br><br>
+    <b>Content:</b>
+    Introduction to the problem: security, privacy, authentication, repudiation, revocation. The key distribution
+    problem:
+    public vs private keys. The mathematics of cryptography: Fermat-Euler Theorem, structure of finite fields and
+    elliptic
+    curves. Cryptographic algorithms: Diffie-Hellman, RSA, El-Gamal. Cryptanalysis: discrete logarithms, factoring. The
+    Coppersmith attack. Elliptic Curve analogues. Private-key algorithms: DES, 3DES and AES. Common hashing algorithms:
+    MD5,
+    SHA-1. Characteristics of safe keys. Using cryptography: digital signatures: how to find the public key.Repudiation
+    and
+    revocation, examples in practice: PGP, digital certificates.
   </p>
 </div>
 
@@ -58,4 +57,126 @@
   <ul>
     <li *ngFor="let assignment of module.assignments" class="assignment">{{ assignment.name }}</li>
   </ul>
+</div>
+
+<div class="box5 box upper-margin">
+  <h2 class="title">Resources:</h2>
+  <div class="resources">
+    <div class="resource pointer">
+      <fa-icon [icon]="faFilePdf" class="fa-2x"></fa-icon>
+      <span>Self Assessment Test</span>
+    </div>
+    <div class="resource pointer">
+      <fa-icon [icon]="faFilePdf" class="fa-2x"></fa-icon>
+      <span>Self Assessment Test Solutions</span>
+    </div>
+    <div class="resource pointer">
+      <fa-icon [icon]="faFilePdf" class="fa-2x"></fa-icon>
+      <span>Course Notes</span>
+    </div>
+    <div class="resource pointer">
+      <fa-icon [icon]="faFilePdf" class="fa-2x"></fa-icon>
+      <span>problems1.pdf</span>
+    </div>
+    <div class="resource pointer">
+      <fa-icon [icon]="faFilePdf" class="fa-2x"></fa-icon>
+      <span>Lecture 1 Slides</span>
+    </div>
+    <div class="resource pointer">
+      <fa-icon [icon]="faFilePdf" class="fa-2x"></fa-icon>
+      <span>Lecture 2 Slides</span>
+    </div>
+    <div class="resource pointer">
+      <fa-icon [icon]="faFilePdf" class="fa-2x"></fa-icon>
+      <span>Lecture 3 Slides</span>
+    </div>
+    <div class="resource pointer">
+      <fa-icon [icon]="faFilePdf" class="fa-2x"></fa-icon>
+      <span>Lecture 4 Slides</span>
+    </div>
+    <div class="resource pointer">
+      <fa-icon [icon]="faFilePdf" class="fa-2x"></fa-icon>
+      <span>Lecture 5 Slides</span>
+    </div>
+    <div class="resource pointer">
+      <fa-icon [icon]="faFilePdf" class="fa-2x"></fa-icon>
+      <span>Lecture 6 Slides</span>
+    </div>
+    <div class="resource pointer">
+      <fa-icon [icon]="faFilePdf" class="fa-2x"></fa-icon>
+      <span>Lecture 7 Slides</span>
+    </div>
+    <div class="resource pointer">
+      <fa-icon [icon]="faFilePdf" class="fa-2x"></fa-icon>
+      <span>Lecture 8 Slides</span>
+    </div>
+    <div class="resource pointer">
+      <fa-icon [icon]="faFilePdf" class="fa-2x"></fa-icon>
+      <span>Lecture 9 Slides</span>
+    </div>
+    <div class="resource pointer">
+      <fa-icon [icon]="faFilePdf" class="fa-2x"></fa-icon>
+      <span>Lecture 10 Slides</span>
+    </div>
+    <div class="resource pointer">
+      <fa-icon [icon]="faFilePdf" class="fa-2x"></fa-icon>
+      <span>Lecture 11 Slides</span>
+    </div>
+    <div class="resource pointer">
+      <fa-icon [icon]="faFilePdf" class="fa-2x"></fa-icon>
+      <span>Lecture 12 Slides</span>
+    </div>
+    <div class="resource pointer">
+      <fa-icon [icon]="faFilePdf" class="fa-2x"></fa-icon>
+      <span>Lecture 13 Slides</span>
+    </div>
+    <div class="resource pointer">
+      <fa-icon [icon]="faFilePdf" class="fa-2x"></fa-icon>
+      <span>Lecture 14 Slides</span>
+    </div>
+    <div class="resource pointer">
+      <fa-icon [icon]="faFilePdf" class="fa-2x"></fa-icon>
+      <span>Lecture 15 Slides</span>
+    </div>
+    <div class="resource pointer">
+      <fa-icon [icon]="faFilePdf" class="fa-2x"></fa-icon>
+      <span>Lecture 16 Slides</span>
+    </div>
+    <div class="resource pointer">
+      <fa-icon [icon]="faFilePdf" class="fa-2x"></fa-icon>
+      <span>Lecture 17 Slides</span>
+    </div>
+    <div class="resource pointer">
+      <fa-icon [icon]="faFilePdf" class="fa-2x"></fa-icon>
+      <span>Lecture 18 Slides</span>
+    </div>
+    <div class="resource pointer">
+      <fa-icon [icon]="faFilePdf" class="fa-2x"></fa-icon>
+      <span>Lecture 19 Slides</span>
+    </div>
+    <div class="resource pointer">
+      <fa-icon [icon]="faFilePdf" class="fa-2x"></fa-icon>
+      <span>Lecture 20 Slides</span>
+    </div>
+    <div class="resource pointer">
+      <fa-icon [icon]="faFilePdf" class="fa-2x"></fa-icon>
+      <span>Lecture 21 Slides</span>
+    </div>
+    <div class="resource pointer">
+      <fa-icon [icon]="faFilePdf" class="fa-2x"></fa-icon>
+      <span>Lecture 22 Slides</span>
+    </div>
+    <div class="resource pointer">
+      <fa-icon [icon]="faFilePdf" class="fa-2x"></fa-icon>
+      <span>Lecture 23 Slides</span>
+    </div>
+    <div class="resource pointer">
+      <fa-icon [icon]="faFilePdf" class="fa-2x"></fa-icon>
+      <span>Lecture 24 Slides</span>
+    </div>
+    <div class="resource pointer">
+      <fa-icon [icon]="faFilePdf" class="fa-2x"></fa-icon>
+      <span>Lecture 25 Slides</span>
+    </div>
+  </div>
 </div>

@@ -44,19 +44,20 @@ export class ModuleService {
   private initModules(): void {
     this.modules = [
       {
-        name: 'Module 1',
+        name: 'Logic and Semantics of Programming Languages',
         id: 0,
-        lectures: this.generateLectures(12),
+        lectures: this.generateLectures(25),
         reading: [
-          { id: 0, moduleId: 0, name: 'Some Book 1' }
+          { id: 0, moduleId: 0, name: 'Douglas Stinson. Cryptography theory and practice (Discrete mathematics and its applications), Chapman & Hall/CRC, 3rd edition, 2005' },
+          { id: 1, moduleId: 0, name: 'J. H. Silverman. An Introduction to Mathematical Cryptography Springer, 2008. (Available as an e-book.)' },
         ],
         assignments: [
-          { id: 0, moduleId: 0, name: 'Test Assignment 1' },
-          { id: 1, moduleId: 0, name: 'Test Assignment 2' }
+          { id: 0, moduleId: 0, name: 'Coursework 1' },
+          { id: 1, moduleId: 0, name: 'Coursework 2' },
         ],
         deadlines: [
-          { date: new Date(), info: 'Test deadline 1' },
-          { date: new Date(), info: 'Test deadline 2' },
+          { date: new Date('03/12/2021'), info: 'Coursework 1 Due' },
+          { date: new Date('04/12/2021'), info: 'Coursework 2 Due' },
         ]
       },
       {

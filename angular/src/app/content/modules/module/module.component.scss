@@ -13,28 +13,34 @@
 
 .box1 {
   width: 100%;
-  height: 35%;
+  height: 20rem;
   overflow-x: auto;
   white-space: nowrap;
 }
 
 .box2 {
   width: 32%;
-  height: 61%;
+  height: 35rem;
   float: left;
 }
 
 .box3 {
   width: 32%;
-  height: 61%;
+  height: 35rem;
   float: left;
   margin-left: 2%;
 }
 
 .box4 {
   width: 32%;
-  height: 61%;
+  height: 35rem;
   float: right;
+}
+
+.box5 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
 }
 
 .upper-margin {
@@ -108,5 +114,19 @@
     text-decoration: underline;
     color: blue;
     float: right;
+  }
+}
+
+.resources {
+  padding: 1rem;
+
+  .resource {
+    &:not(:first-of-type) {
+      margin-top: 1rem;
+    }
+
+    span {
+      margin-left: 1rem;
+    }
   }
 }
